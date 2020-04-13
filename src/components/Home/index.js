@@ -79,7 +79,7 @@ const Home = (props) => {
                 <Grid container spacing={1}>
 
                     {currentPagePagination.length===0?noresultfound:currentPagePagination.map(v => {
-                        const [image, productName, productPrice, productdetails, id] = [v.image, v.productName, v.productPrice, v.productdetails, v.id];
+                        const [image, productName, productPrice, productdetails, id,quantity] = [v.image, v.productName, v.productPrice, v.productdetails, v.id,v.quantity];
                         return (
                             <>
                                 <Grid item xs={4}>
@@ -88,7 +88,7 @@ const Home = (props) => {
                                         <p className="productname">{v.productName}</p>
                                         <p className="productprice">$
                                         {v.productPrice}</p>
-                                        <button className="productbutton" onClick={() => props.addtocart({ image, productName, productPrice, productdetails, id })}>ADD TO CART</button>
+                                        <button className="productbutton" onClick={() => props.addtocart({ image, productName, productPrice, productdetails, id ,quantity})}>ADD TO CART</button>
                                     </Paper>
                                 </Grid>
                             </>

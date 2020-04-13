@@ -11,7 +11,7 @@ function CustomBreadcrumbs(props) {
   const [breadCrumbItems, setBreadCrumbsValue] = useState( [
     { linkTo: '/', label: 'Home' },
     { linkTo: '/cart', label: 'cart' },
-    { linkTo: '/checkout', label: 'checkout' }])
+    ])
     
 
   const breadCrumbsPath = (linkTo) => {
@@ -28,7 +28,6 @@ function CustomBreadcrumbs(props) {
       setBreadCrumbsValue(
         { linkTo: '/', label: 'Home' },
         { linkTo: '/cart', label: 'cart' },
-        { linkTo: '/checkout', label: 'checkout' }
       );
     }
   };

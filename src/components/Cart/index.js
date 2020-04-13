@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import OrderSummary from '../Cart/Ordersummary/index.js';
@@ -8,6 +8,8 @@ const Cart = (props) => {
     console.log(props.productList.addtocartitems, 'cart')
     const [showdetails, setshowdetails] = React.useState(false);
     const [statequantity, setincrement] = React.useState(1);
+    const [initial,setinitial]=React.useState(props.productList.addtocartitems)
+
 
     const increment = () => {
 
@@ -23,12 +25,24 @@ const Cart = (props) => {
     const toogleclose = () => {
         setshowdetails(false)
     }
+    const handleQuantityChange=(e,id)=>{
+
+        const index=initial.findIndex((v)=>v.id===id);
+        const copy=Object.assign({},initial[index])
+        copy.productPrice=copy.productPrice*e.target.value;
+        const original=Object.assign([],initial)
+        original[index]=copy;
+        setinitial(original)
+        setincrement(e.target.value)
+    }
+
 
     const showdetailsupdated = showdetails ? "show" : "hidden";
-    const total= props.productList.addtocartitems.map(v=>v.productPrice*statequantity);
+    const total= initial.map(v=>v.productPrice);
     const grandtotal=total.reduce((initvalue,eachelement)=>initvalue+eachelement,0);
 
-  
+
+  console.log(initial,'initial')
 
 
     return (
@@ -37,13 +51,14 @@ const Cart = (props) => {
             <Grid container spacing={3}>
                 <Grid item sm={8} xs={12} >
                     
-                    {props.productList.addtocartitems.length === 0 ? <Emptycart /> :
-                        props.productList.addtocartitems.map(v => {
+                    {initial.length === 0 ? <Emptycart /> :
+                        initial.map((v)=> {
                             
-                            const [image, productName, productPrice, productdetails] = [v.image, v.productName, v.productPrice, v.productdetails];
+                            const [image, productName, productPrice, productdetails,id] = [v.image, v.productName, v.productPrice, v.productdetails,v.id];
                             const price = (productPrice * statequantity);
+                          ;
                            
-                          
+                          console.log(id,'keys')
                             return (
                                 <>
                                     <Paper elevation={3} className="marginbottom">
@@ -51,10 +66,15 @@ const Cart = (props) => {
                                         <div className="outerDivisionImage">
                                             <img src={image} className='imageSize' />
                                             <span className="cartQuantity">
-                                                Quantity:<button onClick={() => increment()}>+</button>{statequantity}<button onClick={() => decrement()}>-</button>
+                                                Quantity:
+                                                <input 
+                                                type="text" 
+                                                defaultValue={statequantity}
+                                                onChange={(e)=>handleQuantityChange(e,id)}
+                                                />
+                                                {/* Quantity:<button onClick={() => increment()}>+</button>{statequantity}<button onClick={() => decrement()}>-</button> */}
                                             </span>
-                                            <span className="cartPrice">Price:{productPrice * statequantity}</span>
-                          
+                                            <span className="cartPrice">Price:{productPrice }</span>
                                         </div>
                                         <Paper elevation={3} className="productdetailsoutline">
                                             <div onClick={() => toggleShow()}>Product Details</div>
@@ -68,7 +88,7 @@ const Cart = (props) => {
                     }
                 </Grid>
                 <Grid item sm={4} xs={12}>
-                    <OrderSummary  grandtotal={grandtotal}/>
+                    <OrderSummary  grandtotal={Math.floor(grandtotal)}  label="PROCEED TO CHECKOUT"/>
                 </Grid>
             </Grid>
         </div>

@@ -30,6 +30,27 @@ font-size: 13px;
 padding: 10px;
 font-family: Arial, Helvetica, sans-serif;
 }
+.entershippingaddress
+{
+  font-size: 15px;
+  padding: 10px;
+}
+.checkoutpaperright
+{
+  margin: 60px;
+  padding: 25px;
+}
+.completePurchase
+{
+  color: black;
+    text-decoration: none;
+    border: solid 1px darkgray;
+    padding: 20px;
+    margin: 60px;
+}
+
+.papercheckout
+{margin: 60px;}
 .processedbutton
 {
   color: black;
@@ -40,6 +61,36 @@ font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   margin-top: 20px;
   padding: 12px;
+}
+.shippingaddress
+{
+  font-size: 15px;
+}
+.addAdressButton
+{
+  padding: 10px;
+  margin: 10px;
+}
+.buttonEdit{
+  border: solid 1px black;
+  padding: 10px;
+  text-align: center;
+}
+.addressAddedForm
+{
+  padding: 30px;
+    font-size: 13px;
+}
+.erroraddress
+{
+  font-size: 13px;
+  color:red;
+  margin: 10px;
+}
+.inputbasename{
+  margin: 10px;
+  width: 300px;
+  border: solid 1px darkgray;
 }
 .ordersummary
 {

@@ -4,7 +4,8 @@ export default [
         productName:'Samsung galaxy S3',
         productPrice:25000,
         productdetails:'abc',
-        id:Math.random()
+        id:Math.random(),
+        quantity:1
     },
     {
         image:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSrlUIZPMo4X_l7dZxjjXmckJIv8zvqTKhF07zYi6aEVvABfK5E',
@@ -12,7 +13,8 @@ export default [
         productName:'Iphone',
         productPrice:55999,
         productdetails:'Iphone 7',
-        id:Math.random()
+        id:Math.random(),
+        quantity:1
 
     },
     {
