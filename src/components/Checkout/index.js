@@ -58,7 +58,7 @@ console.log(props.location.query.grandtotal,'checkout')
     return (<>
         <Breadcrumbs />
         <Grid container>
-            <Grid item xs={6}>
+            <Grid item sm={6} xs={12}>
                 <Paper className="papercheckout">
                     
                     {
