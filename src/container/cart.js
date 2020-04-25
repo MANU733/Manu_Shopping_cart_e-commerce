@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addtocart, actionproductList} from '../action/fetchproduct.js';
+import { addtocart, actionproductList,startsignin} from '../action/fetchproduct.js';
 import Cart from '../components/Cart/index.js';
 
 const mapStateToProps = state => ({
@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 });
 const mapsDispatchToProps = dispatch => ({
     addtocart:()=>dispatch(addtocart()),
-    actionproductList:()=>dispatch(actionproductList()),
+    actionproductList:()=>dispatch(actionproductList())
+    
 });
 
 

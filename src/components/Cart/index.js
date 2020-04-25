@@ -5,10 +5,11 @@ import OrderSummary from '../Cart/Ordersummary/index.js';
 import Breadcrumbs from '../../customcomponent/BreadCrumbs';
 import Emptycart from './Emptycart'
 const Cart = (props) => {
-    console.log(props.productList.addtocartitems, 'cart')
     const [showdetails, setshowdetails] = React.useState(false);
     const [statequantity, setincrement] = React.useState(1);
     const [initial,setinitial]=React.useState(props.productList.addtocartitems)
+
+    React.useEffect(()=>setinitial(props.productList.addtocartitems),[])
 
 
     const increment = () => {
@@ -46,7 +47,7 @@ const Cart = (props) => {
 
 
     return (
-        <div className="cartOuterDivision">
+        <div className="cartOuterDivision" data-test="cart-render">
             <Breadcrumbs />
             <Grid container spacing={3}>
                 <Grid item sm={8} xs={12} >

@@ -35,6 +35,12 @@ font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   padding: 10px;
 }
+.signinpaper
+{
+  margin: 100px;
+  text-align: center;
+  padding: 100px;
+}
 .checkoutpaperright
 {
   margin: 60px;
@@ -81,15 +87,57 @@ font-family: Arial, Helvetica, sans-serif;
   padding: 30px;
     font-size: 13px;
 }
+.errmsgcolor
+{
+  color:red
+}
+.logoutstyle{
+
+}
+.paperhometop{
+  padding: 25px;
+  margin: 30px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 20px;
+  font-family: fantasy;
+
+}
+.signupstyle{
+
+}
+.Hello{
+
+}
+.signinstyle{
+  margin: 50px;
+
+}
 .erroraddress
 {
   font-size: 13px;
   color:red;
   margin: 10px;
 }
+.buttondisplayflex{
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  font-size: 15px;
+  color: white;
+  padding-left: 50%;
+  background-color: black;
+  margin-left: 10px;
+  margin-top: 30px;
+}
 .inputbasename{
   margin: 10px;
   width: 300px;
+  border: solid 1px darkgray;
+}
+.inputbasename1{
+  margin: 10px;
+  width: 100%;
   border: solid 1px darkgray;
 }
 .ordersummary

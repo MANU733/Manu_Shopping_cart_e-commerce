@@ -1,5 +1,22 @@
 import * as actionType from './actionType.js';
 import productListItems from '../productList';
+import axios from 'axios';
+
+
+export const startsignin=(email,password)=>{
+
+    console.log(email,password)
+    const signindata={
+        email:email,
+        password:password,
+        returnSecureToken:true
+    }
+    return (dispatch)=>{
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC5Vs6oMWr2m1mnH6mlTFl94tZiPMDUtUc',signindata)
+        .then(res=>console.log(res,"response"))
+        .catch(err=>console.log(err,"error"));
+    }
+}
 
 export const actionproductList=()=>
 {
@@ -18,3 +35,12 @@ export const addtocart=(ProductList)=>{
         payload:ProductList
     }
 }
+
+// export default signin=()=>{
+//     return{
+//         type:actionType.SIGNIN,
+//         payload:response
+//     }
+    
+// }
+

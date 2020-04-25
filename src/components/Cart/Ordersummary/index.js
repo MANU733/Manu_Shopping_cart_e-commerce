@@ -13,7 +13,7 @@ class Ordersummary extends React.Component {
 
         console.log(total,'total')
         return (
-            <>
+            <p className="test">
             <h4 >Order Summary</h4>
             <Paper elevation={3}>
                 <p className="ordersummary">Order total:<span className="rowreverse">{Math.floor(this.props.grandtotal)}</span></p>
@@ -25,7 +25,7 @@ class Ordersummary extends React.Component {
         <Link to={{ pathname: '/checkout', query: { total:{total}} }} className="processedbutton">{this.props.label}</Link></Paper>
 
             
-            </>
+            </p>
         )
     }
 }
