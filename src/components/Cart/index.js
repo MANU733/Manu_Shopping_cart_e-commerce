@@ -59,7 +59,7 @@ const Cart = (props) => {
                             const price = (productPrice * statequantity);
                           ;
                            
-                          console.log(id,'keys')
+                        
                             return (
                                 <>
                                     <Paper elevation={3} className="marginbottom">
@@ -82,7 +82,8 @@ const Cart = (props) => {
                                             <div className={showdetailsupdated}>{productdetails}
                                                 <span onClick={() => toogleclose()}>close</span></div>
                                         </Paper>
-                                    </Paper></>
+                                    </Paper>
+                                    </>
                             )
                         }
                         )

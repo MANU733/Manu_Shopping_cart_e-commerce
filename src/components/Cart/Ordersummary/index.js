@@ -10,7 +10,8 @@ class Ordersummary extends React.Component {
         const tax = (8 / 100) * this.props.grandtotal;
         const total = (this.props.grandtotal - discount) + tax;
 
-
+const disablelink=total===0?(<s>{this.props.label}</s>):this.props.label;
+const disableCursor=total===0?"processedbuttondisable":"processedbutton";
         console.log(total,'total')
         return (
             <p className="test">
@@ -22,7 +23,8 @@ class Ordersummary extends React.Component {
                 <p className="ordersummary">Total:<span className="rowreverse">{Math.floor(total)}</span></p>
             </Paper>
             <Paper elevation={3}>
-        <Link to={{ pathname: '/checkout', query: { total:{total}} }} className="processedbutton">{this.props.label}</Link></Paper>
+        <Link to={{ pathname: '/checkout',
+         query: { total:{total}} }} className={disableCursor}>{disablelink}</Link></Paper>
 
             
             </p>

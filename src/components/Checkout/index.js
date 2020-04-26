@@ -58,11 +58,12 @@ console.log(props.location.query.grandtotal,'checkout')
     return (<>
         <Breadcrumbs />
         <Grid container>
-            <Grid item sm={6} xs={12}>
+            <Grid item md={6} xs={12}>
                 <Paper className="papercheckout">
                     
                     {
-                        addressAdded ? (<div className="addressAddedForm">
+                        addressAdded ? (
+                        <div className="addressAddedForm">
                             <h6 className="shippingaddress">Shipping Address</h6>
                             <p>Name:{addressName}</p>
 
@@ -70,7 +71,8 @@ console.log(props.location.query.grandtotal,'checkout')
 
                             <p>Address:{addressArea}</p>
                             <p onClick={editaddress} className="buttonEdit">Edit</p>
-                        </div>)
+                        </div>
+                        )
                             :
                             (<><h5 className="entershippingaddress">Enter Shipping Address</h5>
                             <form onSubmit={(e) => handlesubmit(e)}>
@@ -104,11 +106,14 @@ console.log(props.location.query.grandtotal,'checkout')
                 </Paper>
             </Grid>
            
-            <Grid item xs={6}>
+            <Grid item md={6} xs={12} >
             <Paper className="checkoutpaperright">
                 <p>Order Total: {Math.floor(props.location.query.total.total)}</p> 
                 </Paper>
-                <Link to={{ pathname: '/orderconfirmation', query: { Name:{addressName},total:props.location.query.total.total} }} className="completePurchase">Complete Purchase</Link>
+                <Link to={{ pathname: '/orderconfirmation', 
+                query: { Name:{addressName},total:props.location.query.total.total,phno:addressPhno,address:addressArea}}} 
+                className={!addressAdded?"completePurchasedisabled":"completePurchase"}>
+                    {!addressAdded?<s>Complete Purchase</s>:"Complete Purchase"}</Link>
             </Grid>  
         </Grid>
     </>)
