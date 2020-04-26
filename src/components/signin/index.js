@@ -43,7 +43,7 @@ const Signin = (props) => {
                             onChange={(e) => emailonchange(e)}
                         />
                         <InputBase
-                            placeholder="Enter Paaword"
+                            placeholder="Enter Password"
                             className="inputbasename1"
                             onChange={(e) => passwordonchange(e)}
                         />
