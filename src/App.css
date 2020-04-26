@@ -146,9 +146,7 @@ font-family: Arial, Helvetica, sans-serif;
 {
   color: white;
   border: solid 1px darkgray;
-  width: 390px;
   text-decoration: none;
-  position: absolute;
   text-align: center;
   margin-top: 20px;
   padding: 12px;
@@ -161,7 +159,6 @@ font-family: Arial, Helvetica, sans-serif;
   border: solid 1px darkgray;
   width: 390px;
   text-decoration: none;
-  position: absolute;
   text-align: center;
   margin-top: 20px;
   padding: 12px;
@@ -215,18 +212,6 @@ font-family: Arial, Helvetica, sans-serif;
 
 }
 
-
-.processedbutton {
-  color: black;
-  border: solid 1px darkgray;
-  /* width: 100%; */
-  width: 333px;
-  text-decoration: none;
-  position: absolute;
-  text-align: center;
-  margin-top: 20px;
-  padding: 12px;
-}
 .signupstyle{
 
 }
@@ -450,13 +435,16 @@ color:#b30000;
   margin-left: 10px;
   margin-top: 30px;
 }
+.mb_30
+{
+  margin-bottom: 30px;
+}
 .processedbuttondisable
 {
   color: white;
   border: solid 1px darkgray;
   width: 290px;
   text-decoration: none;
-  position: absolute;
   text-align: center;
   margin-top: 20px;
   padding: 12px;
@@ -469,9 +457,9 @@ color:#b30000;
   border: solid 1px darkgray;
   width: 290px;
   text-decoration: none;
-  position: absolute;
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 50px;
   padding: 12px;
 }
 .font_size{

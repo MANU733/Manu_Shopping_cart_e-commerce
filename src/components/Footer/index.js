@@ -6,7 +6,7 @@ const Footer=()=>
     <Grid container spacing={0}>
         <Grid item xs={12}>
         <div className='footerouterdiv'> 
-        <span className='copyright'>copyrights@2020</span>
+        <span className='copyright'>Manu_copyrights@2020</span>
     </div>
         </Grid>
     </Grid>

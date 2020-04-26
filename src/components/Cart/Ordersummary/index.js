@@ -16,15 +16,15 @@ const disableCursor=total===0?"processedbuttondisable":"processedbutton";
         return (
             <p className="test">
             <h4 >Order Summary</h4>
-            <Paper elevation={3}>
+            <Paper elevation={3} className="mb_30">
                 <p className="ordersummary">Order total:<span className="rowreverse">{Math.floor(this.props.grandtotal)}</span></p>
         <p className="ordersummary">Discount: 20% off<span className="rowreverse">{Math.floor(discount)}</span></p>
                 <p className="ordersummary">Tax: 8% <span className="rowreverse">{Math.floor(tax)}</span></p>
                 <p className="ordersummary">Total:<span className="rowreverse">{Math.floor(total)}</span></p>
             </Paper>
-            <Paper elevation={3}>
+            
         <Link to={{ pathname: '/checkout',
-         query: { total:{total}} }} className={disableCursor}>{disablelink}</Link></Paper>
+         query: { total:{total}} }} className={disableCursor}>{disablelink}</Link>
 
             
             </p>
