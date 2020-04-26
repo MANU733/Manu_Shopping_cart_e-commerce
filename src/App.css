@@ -474,5 +474,13 @@ color:#b30000;
   margin-top: 20px;
   padding: 12px;
 }
+.font_size{
+  font-size: 15px;
+}
+.inputbasename {
+  margin: 10px;
+  width: 90%;
+  border: solid 1px darkgray;
+}
 
 }
