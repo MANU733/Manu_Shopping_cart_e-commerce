@@ -28,7 +28,7 @@ const Home = (props) => {
     const [email, setemail] = React.useState("");
     const [password, setpassword] = React.useState("");
 
-
+console.log(currentPagePagination,'list12')
     const handleChange = (event, value) => {
         setPage(value);
         setcurrentPage(value);
@@ -46,7 +46,7 @@ const Home = (props) => {
     const handlesubmit = (e) => {
         e.preventDefault();
         const results = props.productList.filter(person =>
-            person.productName.toLowerCase().includes(inputtext)
+            person.productName.toLowerCase().includes(inputtext.toLowerCase())
         );
         setfilterresults(results);
         setnoresultfound(`No Results found for search "${inputtext}"`)
@@ -69,6 +69,7 @@ const Home = (props) => {
                                 <InputBase
                                     placeholder="Search for products"
                                     className="inputbase"
+                                    data-test="inputbase"
                                     onChange={(e) => handleChangeinput(e)}
                                 />
                                 <IconButton
@@ -80,6 +81,7 @@ const Home = (props) => {
                             </form>
 
                         </Paper>
+                        <h5>Search for the products eg:"iphone"</h5>
                     </div>
                 </Grid>
             </Grid>
@@ -87,7 +89,7 @@ const Home = (props) => {
             <div className="ProductListPadding">
                 <Grid container spacing={1}>
 
-                    {currentPagePagination.length === 0 ? noresultfound : currentPagePagination.map(v => {
+                    {currentPagePagination.length!== 0 ?  currentPagePagination.map(v => {
                         const [image, productName, productPrice, productdetails, id, quantity] = [v.image, v.productName, v.productPrice, v.productdetails, v.id, v.quantity];
                         return (
                             <>
@@ -97,12 +99,15 @@ const Home = (props) => {
                                         <p className="productname">{v.productName}</p>
                                         <p className="productprice">$
                                         {v.productPrice}</p>
-                                        <button className="productbutton" onClick={() => props.addtocart({ image, productName, productPrice, productdetails, id, quantity })}>ADD TO CART</button>
+                                        <button 
+                                        className="productbutton" 
+                                        data-test="button"
+                                        onClick={() => props.addtocart({ image, productName, productPrice, productdetails, id, quantity })}>ADD TO CART</button>
                                     </Paper>
                                 </Grid>
                             </>
                         )
-                    })}
+                    }):noresultfound }
 
                 </Grid>
                 {filteredres.length === 0 ? "" :
@@ -113,6 +118,7 @@ const Home = (props) => {
                             variant="outlined"
                             shape="rounded"
                             page={page}
+                            data-test="pagination"
                             onChange={handleChange}
                         />
                     </span>

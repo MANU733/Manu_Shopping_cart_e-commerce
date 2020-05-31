@@ -5,12 +5,9 @@ import Paper from '@material-ui/core/Paper';
 import { InputBase } from '@material-ui/core';
 
 
-
 const Signin = (props) => {
     const [email, setemail] = React.useState("");
     const [password, setpassword] = React.useState("");
-
-    console.log(props.signinidToken, 'opo')
 
     const emailonchange = (e) => {
         setemail(e.target.value)
@@ -40,11 +37,13 @@ const Signin = (props) => {
                         <InputBase
                             placeholder="Enter email id"
                             className="inputbasename1"
+                            data-test="Email"
                             onChange={(e) => emailonchange(e)}
                         />
                         <InputBase
                             placeholder="Enter Password"
                             className="inputbasename1"
+                            data-test="password"
                             onChange={(e) => passwordonchange(e)}
                         />
                         <button type="submit" className="buttondisplayflex">signin</button>

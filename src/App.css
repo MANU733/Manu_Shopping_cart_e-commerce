@@ -291,6 +291,10 @@ font-family: Arial, Helvetica, sans-serif;
 {
   display: none;
 }
+.productbutton:hover {
+  background-color: #0066c0;
+  color:white;
+}
 .emptycart{
   font-size: 13px;
   height: 250px;

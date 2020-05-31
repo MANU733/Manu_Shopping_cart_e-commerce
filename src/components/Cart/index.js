@@ -70,7 +70,6 @@ const Cart = (props) => {
                                                 Quantity:
                                                 <input 
                                                 type="text" 
-                                                defaultValue={statequantity}
                                                 onChange={(e)=>handleQuantityChange(e,id)}
                                                 />
                                                 {/* Quantity:<button onClick={() => increment()}>+</button>{statequantity}<button onClick={() => decrement()}>-</button> */}
