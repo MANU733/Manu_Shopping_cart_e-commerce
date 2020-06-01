@@ -10,15 +10,15 @@ const Cart = (props) => {
     const [initial,setinitial]=React.useState(props.productList.addtocartitems)
 
     React.useEffect(()=>setinitial(props.productList.addtocartitems),[])
+// console.log(initial)
 
+    // const increment = () => {
 
-    const increment = () => {
-
-        setincrement(statequantity + 1);
-    }
-    const decrement = () => {
-        setincrement(statequantity - 1);
-    }
+    //     setincrement(statequantity + 1);
+    // }
+    // const decrement = () => {
+    //     setincrement(statequantity - 1);
+    // }
 
     const toggleShow = () => {
         setshowdetails(true)
@@ -43,7 +43,7 @@ const Cart = (props) => {
     const grandtotal=total.reduce((initvalue,eachelement)=>initvalue+eachelement,0);
 
 
-  console.log(initial,'initial')
+//   console.log(initial,'initial')
 
 
     return (

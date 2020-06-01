@@ -44,22 +44,24 @@ describe("Home page test case",()=>{
     //     expect(setstatemock).toHaveBeenCalledWith(2)
     // })
 
-    // test("form",()=>{
-    //     const props={
-    //         productList:[{productName:"manu"}],
-    //         signinidToken:"manustring",
-    //         signinusername:"manu",
-    //         addtocart:jest.fn()
-    //     }
+    test("form",()=>{
+        const props={
+            productList:[{productName:"manu"}],
+            signinidToken:"manustring",
+            signinusername:"manu",
+            addtocart:jest.fn()
+        }
 
-    //     const setstatemock=jest.fn(); 
-    //     React.useState=jest.fn(()=>[[],setstatemock]);
-    //     const wrapper=shallow(<Home {...props}/>);
-    //     const findElement=wrapper.find('form')
-    //     findElement.simulate('submit',{preventDefault(){}})
-    //     expect(setstatemock).toHaveBeenCalled()
+        const setstatemock=jest.fn(); 
+        const setinputtext=jest.fn();
+        React.useState=jest.fn(()=>[[],setstatemock]);
+        React.useState=jest.fn(()=>['manu',setinputtext]);
+        const wrapper=shallow(<Home {...props}/>);
+        const findElement=wrapper.find('form')
+        findElement.simulate('submit',{preventDefault(){}})
+        expect(setinputtext).toHaveBeenCalled()
         
-    // })
+    })
 
     test("click inputbase",()=>{
         const props={
