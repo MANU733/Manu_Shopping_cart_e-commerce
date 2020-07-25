@@ -104,8 +104,9 @@ const Home = (props) => {
                                             className="productbutton"
                                             data-test="button"
                                             onClick={() => props.addtocart({ image, productName, productPrice, productdetails, id, quantity })}>
-                                            {c.includes(id) ? <Link to='/cart' className="productpadding">ITEM ADDED AND GO TO CART</Link> : "ADD TO CART"}
-                                        </button>
+                                            {c.includes(id) ? "ADDED TO CART" : "ADD TO CART"}
+                                        </button><br/>
+                                        {c.includes(id)?<Link to="/cart" className="gotocart">GO TO CART</Link>:""}
                                     </Paper>
                                 </Grid>
                             </>

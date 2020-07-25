@@ -9,6 +9,7 @@ padding:10px
   display: flex;
   padding: 15px;
 }
+
 .imageSize
 {
   height: 100px;
@@ -349,7 +350,13 @@ color:#b30000;
   padding: 5px;
   height: 40px;
   width: 100%;
+  margin: 10px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.gotocart{
+  font-size: 11px;
+  margin-left: 160px;
 }
 .paperproductoutline{
   padding: 25px;

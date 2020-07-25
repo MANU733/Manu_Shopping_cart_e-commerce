@@ -7,10 +7,10 @@ import Emptycart from './Emptycart'
 const Cart = (props) => {
     const [showdetails, setshowdetails] = React.useState(false);
     const [statequantity, setincrement] = React.useState(1);
-    const [initial,setinitial]=React.useState(props.productList.addtocartitems)
+    const [initial, setinitial] = React.useState(props.productList.addtocartitems)
 
-    React.useEffect(()=>setinitial(props.productList.addtocartitems),[])
-// console.log(initial)
+    React.useEffect(() => setinitial(props.productList.addtocartitems), [])
+    // console.log(initial)
 
     // const increment = () => {
 
@@ -26,24 +26,23 @@ const Cart = (props) => {
     const toogleclose = () => {
         setshowdetails(false)
     }
-    const handleQuantityChange=(e,id)=>{
-
-        const index=initial.findIndex((v)=>v.id===id);
-        const copy=Object.assign({},initial[index])
-        copy.productPrice=copy.productPrice*e.target.value;
-        const original=Object.assign([],initial)
-        original[index]=copy;
+    const handleQuantityChange = (e, id) => {
+        const index = initial.findIndex((v) => v.id === id);
+        const copy = Object.assign({}, initial[index])
+        copy.productPrice = copy.productPrice * e.target.value;
+        const original = Object.assign([], initial)
+        original[index] = copy;
         setinitial(original)
         setincrement(e.target.value)
     }
 
 
     const showdetailsupdated = showdetails ? "show" : "hidden";
-    const total= initial.map(v=>v.productPrice);
-    const grandtotal=total.reduce((initvalue,eachelement)=>initvalue+eachelement,0);
+    const total = initial.map(v => v.productPrice);
+    const grandtotal = total.reduce((initvalue, eachelement) => initvalue + eachelement, 0);
 
 
-//   console.log(initial,'initial')
+    //   console.log(initial,'initial')
 
 
     return (
@@ -51,15 +50,15 @@ const Cart = (props) => {
             <Breadcrumbs />
             <Grid container spacing={3}>
                 <Grid item sm={8} xs={12} >
-                    
+
                     {initial.length === 0 ? <Emptycart /> :
-                        initial.map((v)=> {
-                            
-                            const [image, productName, productPrice, productdetails,id] = [v.image, v.productName, v.productPrice, v.productdetails,v.id];
+                        initial.map((v) => {
+
+                            const [image, productName, productPrice, productdetails, id] = [v.image, v.productName, v.productPrice, v.productdetails, v.id];
                             const price = (productPrice * statequantity);
-                          ;
-                           
-                        
+                            ;
+
+
                             return (
                                 <>
                                     <Paper elevation={3} className="marginbottom">
@@ -67,14 +66,14 @@ const Cart = (props) => {
                                         <div className="outerDivisionImage">
                                             <img src={image} className='imageSize' />
                                             <span className="cartQuantity">
-                                                Quantity:
-                                                <input 
+                                                Quantity: 1
+                                                {/* <input 
                                                 type="text" 
                                                 onChange={(e)=>handleQuantityChange(e,id)}
-                                                />
+                                                /> */}
                                                 {/* Quantity:<button onClick={() => increment()}>+</button>{statequantity}<button onClick={() => decrement()}>-</button> */}
                                             </span>
-                                            <span className="cartPrice">Price:{productPrice }</span>
+                                            <span className="cartPrice">Price:{productPrice}</span>
                                         </div>
                                         <Paper elevation={3} className="productdetailsoutline">
                                             <div onClick={() => toggleShow()}>Product Details</div>
@@ -82,14 +81,14 @@ const Cart = (props) => {
                                                 <span onClick={() => toogleclose()}>close</span></div>
                                         </Paper>
                                     </Paper>
-                                    </>
+                                </>
                             )
                         }
                         )
                     }
                 </Grid>
                 <Grid item sm={4} xs={12}>
-                    <OrderSummary  grandtotal={Math.floor(grandtotal)}  label="PROCEED TO CHECKOUT"/>
+                    <OrderSummary grandtotal={Math.floor(grandtotal)} label="PROCEED TO CHECKOUT" />
                 </Grid>
             </Grid>
         </div>
