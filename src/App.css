@@ -2,6 +2,9 @@
 {
     padding: 25px;
 }
+.productpadding{
+padding:10px
+}
 .outerDivisionImage{
   display: flex;
   padding: 15px;

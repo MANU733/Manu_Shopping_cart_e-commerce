@@ -28,7 +28,7 @@ const Home = (props) => {
     const [email, setemail] = React.useState("");
     const [password, setpassword] = React.useState("");
 
-console.log(currentPagePagination,'list12')
+
     const handleChange = (event, value) => {
         setPage(value);
         setcurrentPage(value);
@@ -51,7 +51,6 @@ console.log(currentPagePagination,'list12')
         setfilterresults(results);
         setnoresultfound(`No Results found for search "${inputtext}"`)
     }
-
 
 
     return (
@@ -89,8 +88,10 @@ console.log(currentPagePagination,'list12')
             <div className="ProductListPadding">
                 <Grid container spacing={1}>
 
-                    {currentPagePagination.length!== 0 ?  currentPagePagination.map(v => {
+                    {currentPagePagination.length !== 0 ? currentPagePagination.map(v => {
                         const [image, productName, productPrice, productdetails, id, quantity] = [v.image, v.productName, v.productPrice, v.productdetails, v.id, v.quantity];
+                        let c = props.cartitems.map(v => v.id);
+
                         return (
                             <>
                                 <Grid item xs={4}>
@@ -99,15 +100,17 @@ console.log(currentPagePagination,'list12')
                                         <p className="productname">{v.productName}</p>
                                         <p className="productprice">$
                                         {v.productPrice}</p>
-                                        <button 
-                                        className="productbutton" 
-                                        data-test="button"
-                                        onClick={() => props.addtocart({ image, productName, productPrice, productdetails, id, quantity })}>ADD TO CART</button>
+                                        <button
+                                            className="productbutton"
+                                            data-test="button"
+                                            onClick={() => props.addtocart({ image, productName, productPrice, productdetails, id, quantity })}>
+                                            {c.includes(id) ? <Link to='/cart' className="productpadding">ITEM ADDED AND GO TO CART</Link> : "ADD TO CART"}
+                                        </button>
                                     </Paper>
                                 </Grid>
                             </>
                         )
-                    }):noresultfound }
+                    }) : noresultfound}
 
                 </Grid>
                 {filteredres.length === 0 ? "" :
@@ -122,11 +125,7 @@ console.log(currentPagePagination,'list12')
                             onChange={handleChange}
                         />
                     </span>
-
-
                 }
-
-
             </div>
 
         </>
