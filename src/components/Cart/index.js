@@ -78,7 +78,7 @@ const Cart = (props) => {
                                         <Paper elevation={3} className="productdetailsoutline">
                                             <div onClick={() => toggleShow()}>Product Details</div>
                                             <div className={showdetailsupdated}>{productdetails}
-                                                <span onClick={() => toogleclose()}>close</span></div>
+                                                <span className="close" onClick={() => toogleclose()}>close</span></div>
                                         </Paper>
                                     </Paper>
                                 </>

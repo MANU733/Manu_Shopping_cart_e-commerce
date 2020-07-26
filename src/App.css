@@ -33,8 +33,6 @@ padding:10px
   .inputbasepaper
   {
     width: 100%;
-    margin-bottom: 100px;
-   
   }  
 }
 @media only screen and (max-width: 615px)
@@ -350,13 +348,16 @@ color:#b30000;
   padding: 5px;
   height: 40px;
   width: 100%;
-  margin: 10px;
   font-family: Arial, Helvetica, sans-serif;
+}
+.close {
+  display: flex;
+  color: red;
+  flex-direction: row-reverse;
 }
 
 .gotocart{
-  font-size: 11px;
-  margin-left: 160px;
+  font-size: 13px;
 }
 .paperproductoutline{
   padding: 25px;
