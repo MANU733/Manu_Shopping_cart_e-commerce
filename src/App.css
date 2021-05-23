@@ -1,3 +1,4 @@
+/*
 .cartOuterDivision
 {
     padding: 25px;
@@ -309,20 +310,7 @@ font-family: Arial, Helvetica, sans-serif;
 {
   text-align: center;
 }
-.cartcount{
-  height: 25px;
-  width: 25px;
-  top: -15px;
-  left: -20px;
-  position: relative;
-  text-align: center;
-  /* align-items: center; */
-  border: solid 1px black;
-  border-radius: 50%;
-  /* display: inline-block; */
-  background-color: white;
-  color: black;
-}
+
 .productname{
 font-size: 13px;
 font-family: Arial, Helvetica, sans-serif;
@@ -486,4 +474,9 @@ color:#b30000;
   border: solid 1px darkgray;
 }
 
+}
+*/
+
+.hearderName {
+font-size: 50px;
 }
