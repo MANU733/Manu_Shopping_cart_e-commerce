@@ -8,7 +8,7 @@ const  App=(props) =>{
   return (
     <>
      <Header 
-      hearderName = 'Manu'
+      hearderName = 'CRICKET APP IN PROGRESS'
      />
 </>
   );
